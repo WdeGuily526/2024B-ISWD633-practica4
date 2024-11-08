@@ -58,13 +58,14 @@ No olvides verificar en qué directorio se encuentra el archivo Dockerfile
 
 **¿Cuántos pasos se han ejecutado?**
 # RESPONDER 
-
+9 pasos
 ### Inspeccionar la imagen creada
 # COMPLETAR CON UNA CAPTURA
+![image](https://github.com/user-attachments/assets/a7ab290a-1726-4594-8e69-d64a4ff4cab4)
 
 **Modificar el archivo index.html para incluir su nombre y luego crear una nueva versión de la imagen anterior**
 **¿Cuántos pasos se han ejecutado? ¿Observa algo diferente en la creación de la imagen**
-
+Lo que es diferente en la creación de la imagen esta vez es que Docker ha utilizado la caché para los pasos de yum update -y y yum install httpd -y. Esto significa que Docker no tuvo que ejecutar estos comandos de nuevo porque ya los había ejecutado antes y los resultados estaban en la caché.
 ## Mecanismo de caché
 Docker usa un mecanismo de caché cuando crea imágenes para acelerar el proceso de construcción y evitar la repetición de pasos que no han cambiado. Cada instrucción en un Dockerfile crea una capa en la imagen final. Docker intenta reutilizar las capas de una construcción anterior si no han cambiado, lo que reduce significativamente el tiempo de construcción.
 
